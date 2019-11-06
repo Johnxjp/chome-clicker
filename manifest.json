@@ -1,6 +1,21 @@
 {
     "name": "What Happened",
-    "version": "1.0",
+    "version": "0.1",
     "description": "Stock Market Educational Tool: Understand why a stock moved the way it did",
-    "manifest_version": 2
+    "manifest_version": 2,
+    "browser_action": {
+      "default_popup": "whathappened.html",
+      "default_icon": "whathappened.png"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "permissions": ["storage"]
   }
