@@ -3,5 +3,5 @@ function sendMessage() {
     chrome.runtime.sendMessage({message: "Click Event Detected"});
 };
 
-document.body.addEventListener("click", sendMessage, false);
+document.body.addEventListener("click", sendMessage, true);
 
