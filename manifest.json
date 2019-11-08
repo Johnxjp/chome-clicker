@@ -1,11 +1,10 @@
 {
-    "name": "What Happened",
-    "version": "0.1",
-    "description": "Stock Market Educational Tool: Understand why a stock moved the way it did",
+    "name": "Clicker",
+    "version": "1.0",
+    "description": "Check the number of times you click on a page",
     "manifest_version": 2,
     "browser_action": {
-      "default_popup": "whathappened.html",
-      "default_icon": "whathappened.png"
+      "default_icon": "mouse128.png"
     },
     "background": {
       "scripts": ["background.js"],
@@ -17,5 +16,8 @@
         "js": ["content.js"]
       }
     ],
+    "icons" : {
+      "128": "mouse128.png"
+    },
     "permissions": ["storage"]
   }

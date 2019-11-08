@@ -5,8 +5,6 @@
 'use strict';
 
 function setCountClick(clickCount, tabId) {
-  // console.log("Click count = ", clickCount);
-  // console.log("tab", tabId);
   chrome.browserAction.setBadgeText(
     {"text": String(clickCount), "tabId": tabId});
 };
@@ -22,11 +20,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  // console.log("Received Message", message.greeting, "from", sender);
-  // console.log("Received message from tab", sender.tab.id)
   const tabId = sender.tab.id
   chrome.browserAction.getBadgeText({tabId: tabId}, function(result) {
-    // console.log("The current click for tab", sender.tab.id, "is", result)
     const badgeText = parseInt(result) + 1
     setCountClick(badgeText, tabId);
   });
